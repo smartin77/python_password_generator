@@ -8,7 +8,8 @@ based on: https://github.com/wheelybird/ldap-user-manager/blob/master/www/js/gen
 import wordlist # list of words
 import secrets, random, math
 
-def generatePassword(numberOfWords: int, seperator: str):
+def generate_password(numberOfWords: int, seperator: str):
+  # function returns passphrase string
   # numberOfWords - number of words (int)
   # separator - character (str)
 
@@ -20,12 +21,12 @@ def generatePassword(numberOfWords: int, seperator: str):
   # Empty list to be filled with wordlist
   generatedPassword = []
 
-  integerIndex = getRandomInt(4)
-  integerValue = getRandomInt(99)
-  uppercaseIndex = getRandomInt(4)
+  integerIndex = get_random_int(4)
+  integerValue = get_random_int(99)
+  uppercaseIndex = get_random_int(4)
 
   while uppercaseIndex == integerIndex:
-    uppercaseIndex = getRandomInt(4)
+    uppercaseIndex = get_random_int(4)
 
   i = 0
   for itm in lst:
@@ -45,7 +46,8 @@ def generatePassword(numberOfWords: int, seperator: str):
   return seperator.join(generatedPassword)
 
 
-def getRandomInt(maxVal):
-  return math.floor(random.random() * math.floor(maxVal));
+def get_random_int(maxVal):
+  return int(math.floor(random.random() * math.floor(maxVal)));
 
-#print(generatePassword(4, "-"))
+# usage
+#print(generate_password(4, "-"))

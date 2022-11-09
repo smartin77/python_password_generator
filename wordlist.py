@@ -1,5 +1,9 @@
 #!/usr/bin/env python
 
+"""
+List of words used to generate memorable passphrase
+"""
+
 wordlist = [
   'a',
   'b',
